@@ -7,9 +7,14 @@ import BlockQuoteWrapper from "../components/common/blockQuote";
 import Title from "../components/common/typografy/title";
 import Subtitle from "../components/common/typografy/subtitle";
 import Divider from "../components/common/divider";
+import SimpleComponent from "../components/examples/hoc/simpleComponent";
+import withFunctions from "../components/examples/hoc/withFunctions";
+
 const HOCLayout = () => {
+    const ComponentWithHoc = withFunctions(SimpleComponent);
     return (
         <>
+        <ComponentWithHoc/>
             <Title>HOC</Title>
             <Collapse title="Информация">
                 <BlockQuoteWrapper>
