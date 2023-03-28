@@ -1,8 +1,8 @@
 import React from "react";
 import CardWrapper from "../../common/Card";
 
-const withFunctions = (SimpleComponent) => {
-  const isAuth = localStorage.getItem("token");
+const withFunctions = (SimpleComponent) => (props) => {
+  const isAuth = localStorage.getItem("auth");
   const onLogin = () => {
     localStorage.setItem("auth", "token");
   };
@@ -12,7 +12,7 @@ const withFunctions = (SimpleComponent) => {
   return (
     <>
         <CardWrapper>
-            <SimpleComponent isAuth={isAuth} onLogin={onLogin} onLogOut={onLogOut} />
+            <SimpleComponent {...props} isAuth={isAuth} onLogin={onLogin} onLogOut={onLogOut} />
         </CardWrapper>
     </>
   );
